@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h2>{{userItem.name}}</h2>
+  {{!-- <h4> </h4> --}}
+  <p>{{userItem.email}}</p>
+  <span class="dollar-amount"></span>
+  {{#each userItem.posts as |test|}}
+    <h5>{{test.title}}</h5>
+    <p>{{test.content}}</p>
+    <p>{{format_date test.date_created}}</p>
+  {{/each}}
+</div>

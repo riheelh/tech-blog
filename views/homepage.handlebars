@@ -1,0 +1,30 @@
+{{#each posts as |item|}}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+        {{item.id}}
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      <a href="/post/{{item.id}}">{{item.title}}</a>
+    </h2>
+    <p>
+     {{!-- <h3> Title: {{item.title}} </h3> <br> --}}
+      <!-- Pass needed_funding value to the helper function -->
+      {{!-- <span class="dollar-amount">{{format_amount project.needed_funding}}</span> --}}
+   
+    </p>
+    {{!-- <p>Created by {{item.user.name}} on {{format_date project.date_created}}</p> --}}
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{item.content}}
+    </p>
+  </div>
+</div>
+
+
+{{/each}}
+
+
+
+
+
