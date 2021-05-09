@@ -2,7 +2,8 @@
   <h2>{{postItem.title}}</h2>
   <h4>User: {{postItem.user.name}} </h4>
   <p>{{postItem.content}}</p>
-  <p>
-    <span class="dollar-amount"></span>
-  </p>
+  {{#each postItem.comments as |com|}}
+      <p>{{com.date_created}}</p>
+      <p>{{com.text}}</p>
+  {{/each}}
 </div>
