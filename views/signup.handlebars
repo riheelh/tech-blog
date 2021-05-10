@@ -1,21 +1,23 @@
 <div class="row">
     <div class="col l6 m6 center">
-        <div class='card'>
-            <div class="login-form">
-                <h5>SignUp</h5>
-                <form action="/register" method="POST">
-                    <div class="input-group">
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" />
-                    </div>
-                    <div class="input-group">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" />
-                    </div>
-                    <button>Register</button>
+        {{!-- <div class='card'> --}}
+            <h5>SignUp</h5>
+            <form class="form signup-form">
+                <div class="form-group">
+                    <label for="user-login">User:</label>
+                    <input class="form-input" type="text" id="user-login" />
+                </div>
+                <div class="form-group">
+                    <label for="password-login">Password:</label>
+                    <input class="form-input" type="password" id="password-login" />
+                </div>
+                <div class="form-group">
+                    <button class="btn waves-effect waves-light purple lighten-1" type="submit">Sign Up</button>
                     <a href="/signin">SignIn instead</a>
-                </form>
-            </div>
-        </div>
+                </div>
+            </form>
+        {{!-- </div> --}}
     </div>
 </div>
+
+<script src="./js/signup.js"></script>

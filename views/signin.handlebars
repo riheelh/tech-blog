@@ -3,7 +3,7 @@
         <div class='card'>
             <div class="login-form">
                 <h5>Sign In</h5>
-                <form action="/register" method="POST">
+                <form action="/signup" method="POST">
                     <div class="input-group">
                         <label for="username">Username:</label>
                         <input type="text" name="username" />
@@ -12,10 +12,12 @@
                         <label for="password">Password:</label>
                         <input type="password" name="password" />
                     </div>
-                    <button>Sign In</button>
+                    <button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Sign In</button>
                     <a href="/signup">SignUp instead</a>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script src="./js/signin.js"></script>

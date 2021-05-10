@@ -24,34 +24,36 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-router.get('/dashboard/:id', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
     try {
-        const userData = await User.findByPk(req.params.id, {attributes: { exclude: ['password'] }, include: [{ model: Post}]});
-        const userItem = userData.get({ plain: true });
+        // const userData = await User.findAll({include: [{ model: User, attributes: ['name']}]});
+        // const userItem = userData.get({ plain: true });
         // res.status(200).json(userItem)
-        res.render('dashboard', {userItem})
+        res.render('dashboard' )
     } catch (err) {
         res.status(500).json(err);
+            
     }
 });
 
 router.get('/signin', (req, res) => {
     // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/dashboard');
-      return;
-    }
+    // if (req.session.logged_in) {
+    //   res.redirect('/dashboard');
+    //   return;
+    // }
     res.render('signin');
 });
 
 router.get('/signup', (req, res) => {
     // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/signin');
-      return;
-    }
+    // if (req.session.logged_in) {
+    //   res.redirect('/dashboard');
+    //   return;
+    // }
     res.render('signup');
 });
+
 
 
 module.exports = router;
