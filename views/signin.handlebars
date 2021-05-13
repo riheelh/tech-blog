@@ -3,17 +3,19 @@
         <div class='card'>
             <div class="login-form">
                 <h5>Sign In</h5>
-                <form action="/signup" method="POST">
-                    <div class="input-group">
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" />
+                <form class="form signin-form">
+                    <div class="form-group">
+                        <label for="user-signin">User:</label>
+                        <input class="form-input" type="text" id="user-signin" />
                     </div>
-                    <div class="input-group">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" />
+                    <div class="form-group">
+                        <label for="password-signin">Password:</label>
+                        <input class="form-input" type="password" id="password-signin" />
                     </div>
-                    <button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Sign In</button>
-                    <a href="/signup">SignUp instead</a>
+                    <div class="form-group">
+                        <button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Sign In</button>
+                        <a href="/signup">SignUp instead</a>
+                    </div>
                 </form>
             </div>
         </div>

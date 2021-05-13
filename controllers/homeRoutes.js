@@ -20,6 +20,7 @@ router.get('/post/:id', async (req, res) => {
     try{
         const postData = await Post.findByPk(req.params.id, {include: [{ model: User, attributes: ['name']}, {model: Comment}]});
         const postItem = postData.get({ plain: true });
+        
         // res.status(200).json(postItem)
         res.render('post', {postItem})
     } catch (err) {
@@ -34,8 +35,9 @@ router.get('/dashboard', withAuth ,async (req, res) => {
             include: [{ model: Post}],
         });
         const userItem = userData.get({ plain: true });
+        console.log(userItem)
         res.render('dashboard', {
-            userItem,
+            ...userItem,
             logged_in: true,
         });
     } catch (err) {
