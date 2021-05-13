@@ -1,34 +1,38 @@
 <div class="text-center">
   {{!-- <h3>Dashboard</h3> --}}
-  <h6>Welcome {{name}}</h6>
+  <h6>Welcome, {{name}}</h6>
+  {{#if posts.length}}
+    <h5>My posts</h5>
+    {{#each posts as |post|}}
+    <div class="card">
+      <h6>{{post.title}}</h6>
+      <p>{{post.content}}</p>
+      <p> <b>created at:</b> {{format_date post.date_created}}</p>
+      <a class="btn btn-sm btn-danger red delete-post" data-id="{{post.id}}">Delete</a>
+      <a class="btn btn-sm btn-danger red edit-post" data-id="{{post.id}}">Edit</a>
+    </div>
+    {{/each}}
+  {{/if}}
+</div>
 
-    <div class="col-md-6">
-    <h5>Create a New Post:</h5>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="post-name">New Post:</label>
-        <input class="form-input" type="text" id="post-name" name="post-name" />
-      </div>
-      <div class="form-group">
-        <label for="post-desc">Text:</label>
-        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Post</button>
-      </div>
-    </form>
-  </div>
-
-
-  {{#each posts as |post|}}
+<div class="col-md-6">
+  <h5>Create a New Post:</h5>
   <div class="card">
-    <h5>{{post.title}}</h5>
-    <p>{{post.content}}</p>
-    <p>{{post.date_created}}</p>
+      <form class="form new-post-form">
+        <div class="form-group">
+          <label for="post-name">New Post:</label>
+          <input class="form-input" type="text" id="post-name" name="post-name" />
+        </div>
+        <div class="form-group">
+          <label for="post-desc">Text:</label>
+          <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary black">Post</button>
+        </div>
+      </form>
   </div>
-
-  {{/each}}
 </div>
 
 
+<script src="./js/dashboard.js"></script>
