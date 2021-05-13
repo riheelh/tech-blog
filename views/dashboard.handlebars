@@ -1,16 +1,17 @@
 <div class="text-center">
-  {{!-- <h3>Dashboard</h3> --}}
   <h6>Welcome, {{name}}</h6>
   {{#if posts.length}}
     <h5>My posts</h5>
     {{#each posts as |post|}}
-    <div class="card">
-      <h6>{{post.title}}</h6>
-      <p>{{post.content}}</p>
-      <p> <b>created at:</b> {{format_date post.date_created}}</p>
-      <a class="btn btn-sm btn-danger red delete-post" data-id="{{post.id}}">Delete</a>
-      <a class="btn btn-sm btn-danger red edit-post" data-id="{{post.id}}">Edit</a>
-    </div>
+    {{!-- <div class="card"> --}}
+      {{!-- {{> post-details}} --}}
+      <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger blue" style="margin: 1rem;">{{post.title}}</a><br>
+      {{!-- <button>{{post.title}}</button> --}}
+      {{!-- <p>{{post.content}}</p> --}}
+      {{!-- <p> <b>created at:</b> {{format_date post.date_created}}</p> --}}
+      {{!-- <a class="btn btn-sm btn-danger red delete-post" data-id="{{post.id}}">Delete</a> --}}
+      {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger red edit-post" data-id="{{post.id}}">Edit</a> --}}
+    {{!-- </div> --}}
     {{/each}}
   {{/if}}
 </div>

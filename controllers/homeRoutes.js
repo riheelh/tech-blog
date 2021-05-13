@@ -45,6 +45,35 @@ router.get('/dashboard', withAuth ,async (req, res) => {
     }
 });
 
+router.get('/dashboard/edit/:id', withAuth ,async (req, res) => {
+    try {
+        const postData = await Post.findOne({ where: {id: req.params.id},
+            attributes: [
+                'id', 
+                'title',
+                'content',
+            ],
+            include: [
+            {
+                model: User,
+                attributes: ['name']
+            }]
+        }) 
+        const postItem = postData.get({ plain: true});
+        console.log(postItem)
+        res.render('postEdit', {
+            ...postItem,
+            logged_in: true,
+        });
+
+
+    } catch (err) {
+        res.status(500).json(err);     
+    }
+})
+
+
+
 router.get('/signin', (req, res) => {
     if (req.session.logged_in) {
       res.redirect('/dashboard');

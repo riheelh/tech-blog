@@ -1,8 +1,19 @@
-<div>
+<div class="card">
+    <h4>Edit Post test</h4>
+    <form class="card-body edit-post-form">
+        <label for="post-name" class="form-label">Title</label>
+        <input name="post-name" type="text" value="{{title}}" class="form-input" id="post-name" />
 
+        <label class="form-label" for="content">Content</label>
+        <input name="post-desc" type="text" value="{{content}}" class="form-input" id="post-desc" />
 
+        <a class="btn btn-sm btn-danger red delete-post" data-id="{{id}}">Delete</a>
+        <a class="btn btn-sm btn-danger red edit-post" data-id="{{id}}">Edit</a>
 
-
-
-    
+        {{!-- <button type="submit" class="btn">Update Post</button>
+        <button type="button" class="delete-post-btn btn">Delete Post</button> --}}
+    </form>
 </div>
+
+<script src="/js/delete-post.js"></script>
+<script src="/js/edit-post.js"></script>
