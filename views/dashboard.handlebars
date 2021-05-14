@@ -1,39 +1,63 @@
 <div class="text-center">
-  <h6>Welcome, {{name}}</h6>
-  {{#if posts.length}}
-    <h5>My posts</h5>
-    {{#each posts as |post|}}
-    {{!-- <div class="card"> --}}
-      {{!-- {{> post-details}} --}}
-      <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger blue" style="margin: 1rem;">{{post.title}}</a><br>
-      {{!-- <button>{{post.title}}</button> --}}
-      {{!-- <p>{{post.content}}</p> --}}
-      {{!-- <p> <b>created at:</b> {{format_date post.date_created}}</p> --}}
-      {{!-- <a class="btn btn-sm btn-danger red delete-post" data-id="{{post.id}}">Delete</a> --}}
-      {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger red edit-post" data-id="{{post.id}}">Edit</a> --}}
-    {{!-- </div> --}}
-    {{/each}}
-  {{/if}}
+  <h5>Welcome, {{name}}</h5>
+  <div class="row">
+      <div class="col m12">
+        <div class="card  overlap-card purple darken-1 z-depth-1" style="padding: 20px">
+          <span class="card-title white-text">Add new post:</span>
+          <form class="form new-post-form ">
+            <div class="form-group">
+              <label for="post-name" class="white-text">Title:</label>
+              <input class="form-input white-text" type="text" id="post-name" name="post-name" />
+            </div>
+            <div class="form-group">
+              <label for="post-desc" class="white-text">Body:</label>
+              <textarea class="form-input white-text" id="post-desc" name="post-desc"></textarea>
+            </div>
+            <div class="form-group">
+              {{!-- <button type="submit" class="btn btn-primary black">Post</button> --}}
+              <button class="btn white purple-text waves-effect waves-purple" type="submit">Post</button>
+            </div>
+          </form>      
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col m4">
+        {{#if posts.length}}
+          <h6><b>Posts</b></h6>
+          {{#each posts as |post|}}
+
+            {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger blue" style="margin: 1rem;">{{post.title}}</a><br> --}}
+          <div class='collection'>
+            {{!-- <a href="/dashboard/edit/{{id}}" class="collection-item">{{post.title}}</a> --}}
+            <a href="/dashboard/edit/{{id}}" class="collection-item purple-text">{{post.title}}</a>
+            {{!-- <a href="/dashboard/post/{{id}}" class="collection-item purple-text">{{post.title}}</a> --}}
+          </div>
+          {{/each}}
+        {{/if}}
+      </div>
+      <div class="col m8">
+          <div class="card">
+            <h2>Test</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, consequuntur?</p>
+          </div>
+           <div class="card">
+            <div class="card-content">
+              <span class="card-title">Title</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aut</p>
+            </div>
+            <div class="card-action">
+              <a href="/dashboard/edit/{{id}}">Edit</a>
+              <a href="#" class="delete-secret" data-id="{{secret.id}}">Delete</a>
+            </div>
+        </div>
+      </div>
+   </div>
+
+
 </div>
 
-<div class="col-md-6">
-  <h5>Create a New Post:</h5>
-  <div class="card">
-      <form class="form new-post-form">
-        <div class="form-group">
-          <label for="post-name">New Post:</label>
-          <input class="form-input" type="text" id="post-name" name="post-name" />
-        </div>
-        <div class="form-group">
-          <label for="post-desc">Text:</label>
-          <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary black">Post</button>
-        </div>
-      </form>
-  </div>
-</div>
+
 
 
 <script src="./js/dashboard.js"></script>

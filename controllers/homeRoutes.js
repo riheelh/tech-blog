@@ -18,11 +18,15 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
     try{
-        const postData = await Post.findByPk(req.params.id, {include: [{ model: User, attributes: ['name']}, {model: Comment}]});
+        const postData = await Post.findByPk(req.params.id, 
+            {
+            include: [
+                { model: User, attributes: ['name']}, 
+                {model: Comment}
+            ]
+        });
         const postItem = postData.get({ plain: true });
-        
-        // res.status(200).json(postItem)
-        res.render('post', {postItem})
+        res.render('dashboard', {postItem})
     } catch (err) {
     res.status(500).json(err);
   }
@@ -71,6 +75,37 @@ router.get('/dashboard/edit/:id', withAuth ,async (req, res) => {
         res.status(500).json(err);     
     }
 })
+
+// router.get('/dashboard/post/:id', withAuth ,async (req, res) => {
+//     try {
+//         const postData = await Post.findOne({ where: {id: req.params.id},
+//             attributes: [
+//                 'id', 
+//                 'title',
+//                 'content',
+//             ],
+//             include: [
+//             {
+//                 model: User,
+//                 attributes: ['name']
+//             }]
+//         }) 
+//         const postItem = postData.get({ plain: true});
+//         console.log(postItem)
+//         res.render('dashboard', {
+//             ...postItem,
+//             logged_in: true,
+//         });
+
+
+//     } catch (err) {
+//         res.status(500).json(err);     
+//     }
+// })
+
+
+
+
 
 
 
