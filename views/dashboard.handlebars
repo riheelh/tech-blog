@@ -2,20 +2,20 @@
   <h5>Welcome, {{name}}</h5>
   <div class="row">
       <div class="col m12">
-        <div class="card  overlap-card purple darken-1 z-depth-1" style="padding: 20px">
-          <span class="card-title white-text">Add new post:</span>
+        <div class="card  overlap-card blue-grey lighten-5 z-depth-1" style="padding: 20px">
+          <span class="card-title black-text"><b>New post:</b></span>
           <form class="form new-post-form ">
             <div class="form-group">
-              <label for="post-name" class="white-text">Title:</label>
-              <input class="form-input white-text" type="text" id="post-name" name="post-name" />
+              <label for="post-name" class="black-text">Title:</label>
+              <input class="form-input black-text" type="text" id="post-name" name="post-name" />
             </div>
             <div class="form-group">
-              <label for="post-desc" class="white-text">Body:</label>
-              <textarea class="form-input white-text" id="post-desc" name="post-desc"></textarea>
+              <label for="post-desc" class="black-text">Body:</label>
+              <textarea class="form-input black-text" id="post-desc" name="post-desc"></textarea>
             </div>
             <div class="form-group">
               {{!-- <button type="submit" class="btn btn-primary black">Post</button> --}}
-              <button class="btn white purple-text waves-effect waves-purple" type="submit">Post</button>
+              <button class="btn white black-text waves-effect waves-purple" type="submit">Post</button>
             </div>
           </form>      
         </div>
@@ -30,27 +30,29 @@
             {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger blue" style="margin: 1rem;">{{post.title}}</a><br> --}}
           <div class='collection'>
             {{!-- <a href="/dashboard/edit/{{id}}" class="collection-item">{{post.title}}</a> --}}
-            <a href="/dashboard/edit/{{id}}" class="collection-item purple-text">{{post.title}}</a>
+            {{!-- <a href="/dashboard/edit/{{id}}" class="collection-item purple-text">{{post.title}}</a> --}}
             {{!-- <a href="/dashboard/post/{{id}}" class="collection-item purple-text">{{post.title}}</a> --}}
+            <a href="#" class="collection-item purple-text get-post" data-id="{{post.id}}">{{post.title}}</a>
           </div>
           {{/each}}
         {{/if}}
       </div>
       <div class="col m8">
-          <div class="card">
+        {{> post-details}}
+          {{!-- <div class="card">
             <h2>Test</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, consequuntur?</p>
-          </div>
-           <div class="card">
-            <div class="card-content">
+          </div> --}}
+           {{!-- <div class="card">
+             <div class="card-content">
               <span class="card-title">Title</span>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aut</p>
-            </div>
-            <div class="card-action">
+             </div>
+             <div class="card-action">
               <a href="/dashboard/edit/{{id}}">Edit</a>
               <a href="#" class="delete-secret" data-id="{{secret.id}}">Delete</a>
-            </div>
-        </div>
+             </div>
+          </div> --}}
       </div>
    </div>
 
@@ -61,3 +63,4 @@
 
 
 <script src="./js/dashboard.js"></script>
+<script src="/js/get-post.js"></script>
