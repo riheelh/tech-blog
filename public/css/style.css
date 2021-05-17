@@ -1,4 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: 'Roboto', 'sans-serif'; */
+  margin: 0;
+  background-color: #dee7eb;
+}
 
 .collection {
   margin: 0
+}
+
+.dashboard-post {
+  padding: 20px;
+
+}
+
+
+.dashboard-body {
+  height: 80px;
+}
+
+.dashboard-newpost-title {
+  font-size: 1.6rem !important;
+}
+
+.post-btn {
+  width: 100% !important;
+}
+
+.card-panel {
+
+  width: 40vw;
+
 }

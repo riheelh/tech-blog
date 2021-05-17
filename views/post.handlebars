@@ -10,13 +10,11 @@
       <h5>Comments</h5>
       </div>
         {{#each postItem.comments as |com|}}
-          <div class="card-panel grey lighten-5 z-depth-1">
+          {{!-- <div class="card-panel blue-grey lighten-5 z-depth-1"> --}}
             <em><h6 class="grey-text"> Created By: {{ com.user.name}} </h6></em>
+            <em><p class="grey-text"> {{format_date com.date_created}} </p></em>
             <p>{{com.text}}</p>
-            <div class="card-action right-align">
-              <a href="#" class="black-text"> Date: {{format_date com.date_created}}</a>
-            </div>
-          </div>
+          {{!-- </div> --}}
          {{/each}}
     </div>
   </div>

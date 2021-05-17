@@ -15,21 +15,30 @@
     <nav>
       <div class="nav-wrapper purple darken-3">
         <a href="/" class="brand-logo center">Tech blog</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/signin">Login</a></li>
-        </ul>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/">Home</a></li>
           <li><a href="/dashboard">Dashboard</a></li>
         </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+         {{#if logged_in}}
+          <li><a class="logout-button"  href="#" id="logout-button">Sign Out</a></li>
+          {{!-- <li><a href="/signin">Login</a></li> --}}
+        {{else}}
+          <li><a href="/signin">Login</a></li>
+        {{/if}}
+        </ul>
       </div>
     </nav>
 </header>
+
+
+
 <div class="container">
 
   {{{ body }}}
 </div>
 
+<script src="/js/signout.js"></script>
 </body>
 
 </html>

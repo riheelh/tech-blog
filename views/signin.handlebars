@@ -1,24 +1,27 @@
 <div class="row">
-    <div class="col l6 m6 center">
-        <div class='card'>
+    <div class="col s6 center offset-s3">
+        {{!-- <div class='card'> --}}
             <div class="login-form">
                 <h5>Sign In</h5>
-                <form class="form signin-form">
-                    <div class="form-group">
-                        <label for="user-signin">User:</label>
-                        <input class="form-input" type="text" id="user-signin" />
-                    </div>
-                    <div class="form-group">
-                        <label for="password-signin">Password:</label>
-                        <input class="form-input" type="password" id="password-signin" />
-                    </div>
-                    <div class="form-group">
-                        <button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Sign In</button>
-                        <a href="/signup">SignUp instead</a>
-                    </div>
-                </form>
+                {{!-- <div class="card-panel"> --}}
+                    <form class="form signin-form">
+                        <div class="form-group">
+                            <label for="user-signin">User:</label>
+                            <input class="form-input" type="text" id="user-signin" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password-signin">Password:</label>
+                            <input class="form-input" type="password" id="password-signin" />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn waves-effect waves-light purple lighten-1" type="submit" name="action">Sign In</button>
+                            {{!-- <a href="/signup">SignUp instead</a> --}}
+                            <a href="/signup" class="btn btn-sm btn-danger blue-grey lighten-2" >SignUp</a>
+                        </div>
+                    </form>
+                {{!-- </div> --}}
             </div>
-        </div>
+        {{!-- </div> --}}
     </div>
 </div>
 

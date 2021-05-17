@@ -1,19 +1,40 @@
-<div class="card">
+{{!-- <div class="card"> --}}
     <h4>Edit Post test</h4>
-    <form class="card-body edit-post-form">
+    <form class="card  overlap-card grey lighten-5 z-depth-1 dashboard-post edit-post-form">
+
         <label for="post-name" class="form-label">Title</label>
         <input name="post-name" type="text" value="{{title}}" class="form-input" id="post-name" />
 
         <label class="form-label" for="content">Content</label>
         <input name="post-desc" type="text" value="{{content}}" class="form-input" id="post-desc" />
 
-        <a class="btn btn-sm btn-danger red delete-post" data-id="{{id}}">Delete</a>
-        <a class="btn btn-sm btn-danger red edit-post" data-id="{{id}}">Update</a>
+        <a class="btn btn-sm btn-danger blue-grey lighten-2 delete-post" data-id="{{id}}">Delete</a>
+        <a class="btn btn-sm btn-danger blue-grey lighten-2 edit-post" data-id="{{id}}">Update</a>
 
         {{!-- <button type="submit" class="btn">Update Post</button>
         <button type="button" class="delete-post-btn btn">Delete Post</button> --}}
+
+        {{!-- <div class="card  overlap-card grey lighten-5 z-depth-1 dashboard-post">
+          <span class="card-title black-text dashboard-newpost-title"><b>Enter new post:</b></span>
+          <form class="form new-post-folrm ">
+
+            <div class="form-group">
+              <label for="post-name" class="black-text">Title:</label>
+              <input class="form-input black-text" type="text" id="post-name" name="post-name" />
+            </div>
+
+            <div class="form-group">
+              <label for="post-desc" class="black-text">Body:</label>
+              <textarea class="form-input black-text dashboard-body" id="post-desc" name="post-desc"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button class="btn white black-text waves-effect waves-purple blue" type="submit">Post</button>
+            </div>
+          </form>      
+        </div> --}}
     </form>
-</div>
+{{!-- </div> --}}
 
 <script src="/js/delete-post.js"></script>
 <script src="/js/edit-post.js"></script>
