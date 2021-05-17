@@ -32,7 +32,8 @@
             {{!-- <a href="/dashboard/edit/{{id}}" class="collection-item">{{post.title}}</a> --}}
             {{!-- <a href="/dashboard/edit/{{id}}" class="collection-item purple-text">{{post.title}}</a> --}}
             {{!-- <a href="/dashboard/post/{{id}}" class="collection-item purple-text">{{post.title}}</a> --}}
-            <a href="#" class="collection-item purple-text get-post" data-id="{{post.id}}">{{post.title}}</a>
+            <a type="submit" class=" btn btn-primary collection-item purple-text get-post" data-id="{{post.id}}">{{post.title}}</a>
+            
           </div>
           {{/each}}
         {{/if}}
@@ -63,4 +64,4 @@
 
 
 <script src="./js/dashboard.js"></script>
-<script src="/js/get-post.js"></script>
+{{!-- <script src="./js/get-post.js"></script> --}}

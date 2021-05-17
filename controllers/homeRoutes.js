@@ -6,7 +6,6 @@ router.get('/', async (req, res) => {
     try{
         const postData = await Post.findAll({include: [{ model: User, attributes: ['name']}]});
         const posts = postData.map((item)=> item.get({plain: true}));
-        // res.status(200).json(posts)
         console.log(req.session.logged_in)
         res.render('homepage', {
             posts, 
@@ -26,7 +25,8 @@ router.get('/post/:id', async (req, res) => {
             ]
         });
         const postItem = postData.get({ plain: true });
-        res.render('dashboard', {postItem})
+        console.log(postItem)
+        res.render('post', {postItem})
     } catch (err) {
     res.status(500).json(err);
   }
@@ -39,7 +39,7 @@ router.get('/dashboard', withAuth ,async (req, res) => {
             include: [{ model: Post}],
         });
         const userItem = userData.get({ plain: true });
-        console.log(userItem)
+        // console.log(userItem)
         res.render('dashboard', {
             ...userItem,
             logged_in: true,

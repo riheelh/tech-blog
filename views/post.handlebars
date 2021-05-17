@@ -1,9 +1,16 @@
-<div class="text-center">
-  <h2>{{postItem.title}}</h2>
-  <h4>User: {{postItem.user.name}} </h4>
-  <p>{{postItem.content}}</p>
-  {{#each postItem.comments as |com|}}
-      <p>{{com.date_created}}</p>
-      <p>{{com.text}}</p>
-  {{/each}}
+<div class="col s12 m6">
+  <div class="card">
+    <div class="card-content">
+      <h5 class="purple-text">{{postItem.title}}</h5>
+      <h6 href="#" class="grey-text">Posted By: {{postItem.user.name}}</h6>
+        <p class="black-text">{{postItem.content}}</p>
+    </div>
+    <div class="card-action left-align">
+        {{#each postItem.comments as |com|}}
+            <p> Created at: {{format_date com.date_created}}</p>
+            <p>{{ com.text}}</p>
+         {{/each}}
+      {{!-- <a href="#" class="grey-text center-align"> Post Date: {{format_date date_created}}</a> --}}
+    </div>
+  </div>
 </div>
