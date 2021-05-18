@@ -1,9 +1,12 @@
 const newFormHandler = async (event) => {
-
+    // event.preventDefault()
 
     const text = document.querySelector('#comment-desc').value.trim();
+    console.log(event.target)
+    // console.log(this.dataset.id)
+    // console.log(event.target.dataset.id)
     const post_id = event.target.getAttribute('data-id');
-    console.log(post_id)
+    // console.log(post_id)
     
     if (text) {
         const response = await fetch(`/api/comments`, {
@@ -15,7 +18,7 @@ const newFormHandler = async (event) => {
         });
 
         if (response.ok) {
-        document.location.redirect('/');
+            document.location.reload(`/post/${{post_id}}`);
         } else {
         alert('Failed to create comment');
         }

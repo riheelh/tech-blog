@@ -3,6 +3,7 @@ const { Post, User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
+    console.log(req.session)
     try{
         const postData = await Post.findAll({include: [{ model: User, attributes: ['name']}]});
         const posts = postData.map((item)=> item.get({plain: true}));
