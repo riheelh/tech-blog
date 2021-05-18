@@ -4,7 +4,10 @@
 ## Description  
 Basic tech blog in CMS style to post news, opnions and comments.
 
-**LIVE URL:**
+**LIVE URL:** https://evening-hamlet-12351.herokuapp.com/
+
+![screen01](./Assets/scrn01.PNG)
+![screen02](./Assets/scrn02.PNG)
 
 ## Table of Contents
 
@@ -24,8 +27,6 @@ Basic tech blog in CMS style to post news, opnions and comments.
 ```
 npm i
 ```
-
-
 ## Usage 
 - Open
 - change directory to the project directory
