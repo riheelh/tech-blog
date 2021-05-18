@@ -1,21 +1,21 @@
 const newFormHandler = async (event) => {
-    event.preventDefault();
 
-    const desc = document.querySelector('#comment-desc').value.trim();
-    // add post ID , use the post-id dataset idea
+
+    const text = document.querySelector('#comment-desc').value.trim();
     const post_id = event.target.getAttribute('data-id');
-
-    if (desc) {
+    console.log(post_id)
+    
+    if (text) {
         const response = await fetch(`/api/comments`, {
         method: 'POST',
-        body: JSON.stringify({ desc, post_id }),
+        body: JSON.stringify({ text, post_id}),
         headers: {
             'Content-Type': 'application/json',
         },
         });
 
         if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.redirect('/');
         } else {
         alert('Failed to create comment');
         }
