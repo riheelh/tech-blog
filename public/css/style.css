@@ -14,9 +14,11 @@ body {
 
 .dashboard-post {
   padding: 20px;
-
 }
 
+.dashboard-comment {
+  padding: 20px;
+}
 
 .dashboard-body {
   height: 80px;
@@ -28,10 +30,4 @@ body {
 
 .post-btn {
   width: 100% !important;
-}
-
-.card-panel {
-
-  width: 40vw;
-
 }
